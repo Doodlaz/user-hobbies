@@ -14,5 +14,4 @@ const PeopleListItem = props => {
   )
 }
 
-
 export default PeopleListItem

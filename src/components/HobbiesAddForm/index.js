@@ -9,19 +9,21 @@ import { AddHobbies } from './styles'
 
 import shortid from "shortid";
 
-const initial = {
-  id :shortid.generate(),
-  name: '',
-  passion: '',
-  year: '',
-};
+
 
 const HobbiesAddForm = props => {
 
-  const {addHobby, show} = props,
-        [state, setState] = useState(initial),
-        [errorClass, setErrorClass] = useState(''),
-        options = ['Low', 'Medium', 'High'];
+  const initial = {
+    id : shortid.generate(),
+    name: '',
+    passion: '',
+    year: '',
+  };
+
+  const {addHobby, show} = props;
+  const [state, setState] = useState(initial);
+  const [errorClass, setErrorClass] = useState('');
+  const options = ['Low', 'Medium', 'High'];
 
   const onChange = (e, key) => {
     setState({...state,[key] : e.target.value })
@@ -50,7 +52,7 @@ const HobbiesAddForm = props => {
     if (!rv_name.test(state.name)){
       setErrorClass('error ')
     }
-
+    // console.log(shortid.generate());
   };
 
   const [open, setOpen] = React.useState(false);
